@@ -1,4 +1,5 @@
-﻿let mapleader = "z"
+﻿<<<<<<< .mine
+let mapleader = "z"
 
 " ===== vim 介面設定 ===================================
 
@@ -91,7 +92,103 @@ nnoremap <leader>fp :vsc ReSharper.ReSharper_ResultListGoToPrevLocation<CR>
 " ======== 剪貼簿   ==================================================
 " 前一個 function
  map <leader>f }y{kpwwwwww
+=======
+let mapleader = "z"
+
+" ===== vim 介面設定 ===================================
+
+set scrolloff=15 " default 0     "螢幕上下移動時保留可見行數
+set timeoutlen=300
+
+
+" ===== 格式化與存檔 ==========================================="
+
+inoremap <Esc> <Esc>:vsc ReSharper.ReSharper_ReformatCode<CR>:vsc File.SaveAll<CR>:w<CR>
+" noremap <Esc> <Esc>:vsc ReSharper.ReSharper_ReformatCode<CR>:vsc File.SaveAll<CR>
+"   imap kj <Esc>:vsc ReSharper.ReSharper_ReformatCode<CR>:w<CR>
+"    map kj <Esc>:vsc ReSharper.ReSharper_ReformatCode<CR>:vsc File.SaveAll<CR>
+"    map jk <Esc>:vsc ReSharper.ReSharper_ReformatCode<CR>:vsc File.SaveAll<CR>
+
+" ====== Git ================================== 
+
+imap <leader>gc :vsc Team.Git.Commit<CR>
+ map <leader>gc :vsc Team.Git.Commit<CR>
+imap <leader>gi :vsc Team.Git.Commit<CR>
+ map <leader>gi :vsc Team.Git.Commit<CR>
+"  imap gc <Esc>:vsc Team.Git.Commit<CR>
+"   map gc <Esc>:vsc Team.Git.Commit<CR>
+"  imap gi <Esc>:vsc Team.Git.Commit<CR>
+"   map gi <Esc>:vsc Team.Git.Commit<CR>
+
+
+" ====== run tests =============================
+
+imap <leader>ra <Esc>:vsc TestExplorer.RunAllTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+ map <leader>ra <Esc>:vsc TestExplorer.RunAllTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+
+imap <leader>rr <Esc>:vsc TestExplorer.RunAllTestsInContext<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+ map <leader>rr <Esc>:vsc TestExplorer.RunAllTestsInContext<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+
+ map <leader>rtf :vsc TestExplorer.RunFailedTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+ map <leader>rtn :vsc TestExplorer.RunNotRunTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+ map <leader>rtp :vsc TestExplorer.RunPassedTests<CR>:vsc TestExplorer.ShowTestExplorer<CR>
+ map <leader>rts :vsc TestExplorer.ShowTestExplorer<CR>
+
+
+
+
+
+
+" ===== R# Smart ======================================"
+
+imap <leader><leader> <Esc>:vsc ReSharper_QuickActionsHideVs<CR><Esc>
+ map <leader><leader> <Esc>:vsc ReSharper_QuickActionsHideVs<CR><Esc>
+
+" ====== Template Sample    ================================================
+"     map <leader>rxxx :vsc ReSharper.ReSharper_xxx<CR><Esc>
+
+" ===== R# Refactorings ==============================
+
+" 指令最後要加兩次 <Esc> 確保 離開 v 模式
+imap <leader>rn <Esc>:vsc ReSharper.ReSharper_Rename<CR><Esc><Esc>
+ map <leader>rn <Esc>:vsc ReSharper.ReSharper_Rename<CR><Esc><Esc>
+ map <leader>rd :vsc ReSharper.ReSharper_SafeDelete<CR><Esc><Esc>
+imap <leader>rv <Esc>:vsc ReSharper.ReSharper_IntroVariable<CR><Esc><Esc>
+ map <leader>rv <Esc>:vsc ReSharper.ReSharper_IntroVariable<CR><Esc><Esc>
+imap <leader>rf <Esc>:vsc ReSharper.ReSharper_IntroduceField<CR><Esc><Esc>
+ map <leader>rf <Esc>:vsc ReSharper.ReSharper_IntroduceField<CR><Esc><Esc>
+imap <leader>rp <Esc>v:vsc ReSharper.ReSharper_IntroduceParameter<CR><Esc><Esc>
+ map <leader>rp <Esc>v:vsc ReSharper.ReSharper_IntroduceParameter<CR><Esc><Esc>
+imap <leader>ri <Esc>:vsc ReSharper.ReSharper_InlineVariable<CR><Esc><Esc>
+ map <leader>ri <Esc>:vsc ReSharper.ReSharper_InlineVariable<CR><Esc><Esc>
+ map <leader>re :vsc ReSharper.ReSharper_EncapsulateField<CR><Esc><Esc>
+ map <leader>rs :vsc ReSharper.ReSharper_ReSharper_ChangeSignature<CR><Esc><Esc>
+
+ map <leader>rm :vsc ReSharper.ReSharper_ExtractMethod<CR><Esc><Esc>
+
+" ===== Navigate ====================================
+
+
+ map gr :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
+ map ge :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
+
+imap <leader>rt <Esc>:vsc ReSharper.ReSharper_GotoType<CR>
+ map <leader>rt :vsc ReSharper.ReSharper_GotoType<CR>
+ map ,m :vsc ReSharper.ReSharper_GotoFileMember<CR>
+
+
+" R# find ==================="
+" nnoremap <leader>ff :vsc Resharper_FindNextInterceptor<CR>
+nnoremap <leader>fn :vsc ReSharper.ReSharper_ResultListGoToNextLocation<CR>
+nnoremap <leader>fp :vsc ReSharper.ReSharper_ResultListGoToPrevLocation<CR>
+
+
+" ======== 剪貼簿   ==================================================
+" 前一個 function
+ map <leader>f }y{kpwwwwww
+>>>>>>> .theirs
  map <leader>n /return<CR>V/;<CR>
+<<<<<<< .mine
  map gn /return<CR>V/;<CR>
  map gi /if<Space>(<CR>wwvi(
 
@@ -164,3 +261,77 @@ set clipboard=unnamed
 " nnoremap <Space> :vsc Tools.InvokeAceJumpCommand<CR>
 
 " =======================
+=======
+ map gn /[0-9]\+<CR>
+ map gi /if<Space>(<CR>wwvi(
+
+ " 斷言
+ noremap zae oAssert.AreEqual(expected, actual);<Esc>bbbb
+ map ze oAssert.Equal(expected, actual);<Esc>bbbb
+
+imap hc <Esc>^C
+ map hc <Esc>^C
+imap <leader>; <Esc>g_a;<Esc>
+imap <leader>, <Esc>g_a,<Esc>
+imap <leader>l <Esc>g_a
+imap <leader>' <Esc>/"<CR>
+ map <leader>' <Esc>/"<CR>
+
+ map <leader>( vi(
+ map <leader>9 vi(
+ map <leader>[ vi[
+ map <leader>{ vi{
+ map <leader>< vi<
+ map <leader>" vi"
+ map <leader>s vi"
+ map <leader>w viw
+
+
+
+" ===== Book Mark =========================="
+
+nnoremap <leader>bt :vsc Edit.ToggleBookmark<CR>
+nnoremap <leader>bn :vsc Edit.NextBookmark<CR>
+nnoremap <leader>bb :vsc Edit.PreviousBookmark<CR>
+nnoremap <leader>bc :vsc Edit.ClearBookmarks<CR>
+
+" ===== Go to =========================="
+
+  "  nnoremap <leader>gq :vsc Edit.GoToPrevLocation<CR>
+  "  " ctrl f12"
+  "  nnoremap <leader>gd :vsc Edit.GoToDeclaration<CR>
+  "  nnoremap <leader>gi :vsc Edit.GoToImplementation<CR>
+  "  " f12"
+  "  nnoremap <leader>gg :vsc Edit.GoToDefinition<CR>
+  "  nnoremap <leader>ga :vsc Edit.GoToAll<CR>
+
+" ===== View ==========================
+
+" nnoremap <leader>p :vsc View.NavigateBackward<CR>
+" nnoremap <leader>f :vsc View.NavigateForward<CR>
+
+
+"
+"
+"  from github
+"   https://github.com/keithn/vsvimguide
+"
+"
+"
+nnoremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+nnoremap ,e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
+nnoremap ,E :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
+nnoremap ,s :vsc ReSharper.ReSharper_SurroundWith<CR>
+nnoremap ,u :vsc ReSharper.ReSharper_GotoUsage<CR>
+nnoremap ,d :vsc ReSharper.ReSharper_DuplicateText<CR>
+nnoremap ,, :vsc ReSharper.ReSharper_GotoText<CR>
+set clipboard=unnamed
+ map ;; g_a;<Esc>
+ map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+ map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+
+"  2017 沒有這個了"
+" nnoremap <Space> :vsc Tools.InvokeAceJumpCommand<CR>
+
+" =======================
+>>>>>>> .theirs
