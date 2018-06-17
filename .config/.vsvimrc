@@ -185,8 +185,84 @@ nnoremap <leader>fp :vsc ReSharper.ReSharper_ResultListGoToPrevLocation<CR>
 " ======== 剪貼簿   ==================================================
 " 前一個 function
  map <leader>f }y{kpwwwwww
+
  map <leader>n /return<CR>V/;<CR>
  map gn /return<CR>V/;<CR>
+ map gi /if<Space>(<CR>wwvi(
+
+ " 斷言
+ noremap zae oAssert.AreEqual(expected, actual);<Esc>bbbb
+ map ze oAssert.Equal(expected, actual);<Esc>bbbb
+
+imap hc <Esc>^C
+ map hc <Esc>^C
+imap <leader>; <Esc>g_a;<Esc>
+imap <leader>, <Esc>g_a,<Esc>
+imap <leader>l <Esc>g_a
+imap <leader>' <Esc>/"<CR>
+ map <leader>' <Esc>/"<CR>
+
+ map <leader>( vi(
+ map <leader>9 vi(
+ map <leader>[ vi[
+ map <leader>{ vi{
+ map <leader>< vi<
+ map <leader>" vi"
+ map <leader>s vi"
+ map <leader>w viw
+
+
+
+" ===== Book Mark =========================="
+
+nnoremap <leader>bt :vsc Edit.ToggleBookmark<CR>
+nnoremap <leader>bn :vsc Edit.NextBookmark<CR>
+nnoremap <leader>bb :vsc Edit.PreviousBookmark<CR>
+nnoremap <leader>bc :vsc Edit.ClearBookmarks<CR>
+
+" ===== Go to =========================="
+
+  "  nnoremap <leader>gq :vsc Edit.GoToPrevLocation<CR>
+  "  " ctrl f12"
+  "  nnoremap <leader>gd :vsc Edit.GoToDeclaration<CR>
+  "  nnoremap <leader>gi :vsc Edit.GoToImplementation<CR>
+  "  " f12"
+  "  nnoremap <leader>gg :vsc Edit.GoToDefinition<CR>
+  "  nnoremap <leader>ga :vsc Edit.GoToAll<CR>
+
+" ===== View ==========================
+
+" nnoremap <leader>p :vsc View.NavigateBackward<CR>
+" nnoremap <leader>f :vsc View.NavigateForward<CR>
+
+
+"
+"
+"  from github
+"   https://github.com/keithn/vsvimguide
+"
+"
+"
+nnoremap gd :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+nnoremap ,e :vsc ReSharper.ReSharper_GotoNextErrorInSolution<CR>
+nnoremap ,E :vsc ReSharper.ReSharper_GotoPrevErrorInSolution<CR>
+nnoremap ,s :vsc ReSharper.ReSharper_SurroundWith<CR>
+nnoremap ,u :vsc ReSharper.ReSharper_GotoUsage<CR>
+nnoremap ,d :vsc ReSharper.ReSharper_DuplicateText<CR>
+nnoremap ,, :vsc ReSharper.ReSharper_GotoText<CR>
+set clipboard=unnamed
+ map ;; g_a;<Esc>
+ map ] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+ map [ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+
+"  2017 沒有這個了"
+" nnoremap <Space> :vsc Tools.InvokeAceJumpCommand<CR>
+
+" =======================
+=======
+ map gn /[0-9]\+<CR>
+=======
+>>>>>>> 80de160ccd6dcddeacbab5a9977ad681c46fac7a
  map gi /if<Space>(<CR>wwvi(
 
  " 斷言
