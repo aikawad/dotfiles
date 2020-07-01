@@ -1,113 +1,42 @@
 let mapleader = 'z'
-set rnu
-set nu
+set ignorecase
+set number
+set relativenumber
+set incsearch
 
 
 " ===== vim 介面設定 ===================================
 
-set scrolloff=15 " default 0     "螢幕上下移動時保留可見行數
-set timeoutlen=300
+set scrolloff=5 " default 0     "螢幕上下移動時保留可見行數
+"set timeoutlen=300
 
 
-map <leader>ff :action ReformatCode<CR>:w<CR>
-map <leader>ra :action Run<CR>
-map <leader>rt :action SearchEverywhere<CR>
-map <leader>rf :action IntroduceField<CR>
-map \s :action ChangeSignature<CR>
-map <leader>cd v{y}po<esc>?def<CR>f_l
-map <leader>cc /"<cr>lci"
-map <leader>n T.
-map <leader>ri :action Inline<CR>
-map M :action ExtractMethod<CR>
-map <leader>rp :action IntroduceParameter<CR>
-map <leader>rv :action IntroduceVariable<CR>
+nnoremap <leader>f :action ReformatCode<CR>:w<CR>
+nnoremap <leader>ra :action Run<CR>
+nnoremap <leader>rt :action SearchEverywhere<CR>
+nnoremap <leader>ro :action Move<CR>
+nnoremap <leader>rf :action IntroduceField<CR>
+nnoremap \s :action ChangeSignature<CR>
+nnoremap <leader>cd v{y}po<esc>?def<CR>f_l
+nnoremap <leader>cc /"<cr>lci"
+nnoremap <leader>n T.
+nnoremap <leader>ri :action Inline<CR>
+nnoremap M :action ExtractMethod<CR>
+nnoremap <leader>rp :action IntroduceParameter<CR>
+nnoremap <leader>rv :action IntroduceVariable<CR>
+nnoremap <leader>rs :action SurroundWith<CR>
 
 
-map <leader>a <esc>
 imap <a-.> self.
 map <a-.> aself.
 
  map   <leader>rr  :action RenameElement<CR>
 nnoremap <leader>gc :action GotoClass<CR>
-nnoremap <leader>d :action Debug<CR>
 
 " create a instance of object
 nnoremap <a-;> yiwPa = <esc>^~
 
 set easymotion
 
-" Colemak stuff
-"  tvb   yhnm
-nnoremap m h 
-nnoremap n j
-nnoremap e k
-nnoremap i l
-nnoremap f e
-nnoremap F E
-
-nnoremap u i
-nnoremap U I
-nnoremap l u
-nnoremap L U
-
-nnoremap k n 
-nnoremap K N 
-nnoremap h m
-nnoremap H M
 
 
-xnoremap m h
-xnoremap n j
-xnoremap e k
-xnoremap i l
-xnoremap f e
-xnoremap F E
-
-xnoremap u i
-xnoremap U I
-xnoremap l u
-xnoremap L U
-
-xnoremap k n
-xnoremap K N
-xnoremap h m
-xnoremap H M
-
-onoremap m h
-onoremap n j
-onoremap e k
-onoremap i l
-onoremap f e
-onoremap F E
-
-onoremap u i
-onoremap U I
-onoremap l u
-onoremap L U
-
-onoremap k n
-onoremap k N
-onoremap h m
-onoremap H M
-
-vnoremap m h
-vnoremap n j
-vnoremap e k
-vnoremap i l
-vnoremap f e
-vnoremap F E
-
-vnoremap u i
-vnoremap U I
-vnoremap l u
-vnoremap L U
-
-vnoremap k n
-vnoremap k N
-vnoremap h m
-vnoremap H M
-
-set ignorecase
-set number
-set relativenumber
-set incsearch
