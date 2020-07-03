@@ -1,42 +1,48 @@
 let mapleader = 'z'
-set ignorecase
-set number
-set relativenumber
-set incsearch
+imap <leader><leader><leader> <esc>
 
 
 " ===== vim 介面設定 ===================================
 
 set scrolloff=5 " default 0     "螢幕上下移動時保留可見行數
 "set timeoutlen=300
+set ignorecase
+set number
+set relativenumber
+set incsearch
 
 
-nnoremap <leader>f :action ReformatCode<CR>:w<CR>
-nnoremap <leader>ra :action Run<CR>
-nnoremap <leader>rt :action SearchEverywhere<CR>
-nnoremap <leader>ro :action Move<CR>
-nnoremap <leader>rf :action IntroduceField<CR>
-nnoremap \s :action ChangeSignature<CR>
-nnoremap <leader>cd v{y}po<esc>?def<CR>f_l
-nnoremap <leader>cc /"<cr>lci"
-nnoremap <leader>n T.
-nnoremap <leader>ri :action Inline<CR>
-nnoremap M :action ExtractMethod<CR>
-nnoremap <leader>rp :action IntroduceParameter<CR>
-nnoremap <leader>rv :action IntroduceVariable<CR>
-nnoremap <leader>rs :action SurroundWith<CR>
+map <leader>f :action ReformatCode<CR>:w<CR>
+map <leader>ra :action Run<CR>
+map <leader>rt :action SearchEverywhere<CR>
+map <leader>ro :action Move<CR>
 
+map <leader>rr :action RenameElement<CR>
+map \s :action ChangeSignature<CR>
+map \t /def<CR>w
+map <a-n> /def<CR>w
+map <a-j> /def<CR>w
+" map \d }v{y}po<esc>?def<CR>f_l
+map \d vasy}p<leader>f?def<CR>f_l
+map \f *ggn
+map \b T.ct(
+map \c T_ct_
+
+map <leader>n T.
+map <leader>ri :action Inline<CR>
+map M :action ExtractMethod<CR>
+map <leader>rs :action SurroundWith<CR>
+
+map <leader>rf :action IntroduceField<CR>
+map <leader>rp :action IntroduceParameter<CR>
+map \p         :action IntroduceParameter<CR>
+map <leader>rv :action IntroduceVariable<CR>
+map \v         :action IntroduceVariable<CR>
+
+map <leader>cc /"<cr>lci"
+map <a-;> yiwPa = <esc>^~
 
 imap <a-.> self.
-map <a-.> aself.
 
- map   <leader>rr  :action RenameElement<CR>
-nnoremap <leader>gc :action GotoClass<CR>
-
-" create a instance of object
-nnoremap <a-;> yiwPa = <esc>^~
 
 set easymotion
-
-
-
