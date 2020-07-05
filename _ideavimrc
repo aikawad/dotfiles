@@ -13,6 +13,7 @@ set incsearch
 set visualbell
 
 " ----  common action ------------"
+map  <leader><leader>n :action NewElement<CR>
 map  <leader>qq :action InvalidateCaches<CR>
 map  <leader>f       :action ReformatCode<CR>:w<CR>
 map  <leader>ra      :action Run<CR>
