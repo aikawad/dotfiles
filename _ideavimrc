@@ -3,17 +3,19 @@ let mapleader = 'z'
 " ===== vim 介面設定 ===================================
 
 "set timeoutlen=300
-set scrolloff=20 " default 0     "螢幕上下移動時保留可見行數
+set scrolloff=8 " default 0     "螢幕上下移動時保留可見行數
 set siso=40
 set ss=40
 set ignorecase
 set number
 set relativenumber
 set incsearch
+set hls
 set visualbell
 
 " ----  common action ------------"
-map  <leader>qq :action InvalidateCaches<CR>
+map   <leader>qq      :action InvalidateCaches<CR>
+imap  <leader>qq <esc>:action InvalidateCaches<CR>
 map  <leader>f       :action ReformatCode<CR>:w<CR>
 map  <leader>ra      :action Run<CR>
 imap <leader>f  <esc>:action ReformatCode<CR>:w<CR>
@@ -23,15 +25,16 @@ imap <leader>ra <esc>:action Run<CR>
 map   <leader>n            :action GotoNextError<CR>
 imap  <leader>n       <esc>:action GotoNextError<CR>
 map  <leader>rt      :action SearchEverywhere<CR>
-map  <leader>ro      :action Move<CR>
 imap <leader>rt <esc>:action SearchEverywhere<CR>
+map  <leader>ro      :action Move<CR>
 imap <leader>ro <esc>:action Move<CR>
 map \e :action MethodUp<CR>
 map \n :action MethodDown<CR>
 
 
 " ----- move to ------------------
-map    \f      *ggn
+map    \f     :action GotoDeclaration<CR>
+imap   \f     <esc>:action GotoDeclaration<CR>
 map    \t /def<CR>w
 map <a-n> /def<CR>w
 map <a-j> /def<CR>w
@@ -64,8 +67,9 @@ map <leader>rv :action IntroduceVariable<CR>
 map         \v :action IntroduceVariable<CR>
 
 " ---- Customer text script ------------
-map  <a-;> ^yiw^Pa = <esc>^veu<esc>
+map  <a-;>      ^yiw^Pa = <esc>^veu<esc>
 imap <a-;> <esc>^yiw^Pa = <esc>^veu<esc>
+map  <a-.> iself.
 imap <a-.> self.
 
 " ---- plugin for ideavim -----------
