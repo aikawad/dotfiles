@@ -3,15 +3,22 @@ let mapleader = 'z'
 " ===== vim 介面設定 ===================================
 
 "set timeoutlen=300
-set scrolloff=8 " default 0     "螢幕上下移動時保留可見行數
-set siso=40
-set ss=40
+set scrolloff=16 " default 0     "螢幕上下移動時保留可見行數
+set siso=20
+set ss=20
 set ignorecase
 set number
-set relativenumber
+set rnu
 set incsearch
 set hls
 set visualbell
+
+nnoremap i :noh<CR>i
+nnoremap a :noh<CR>a
+nnoremap c :noh<CR>c
+"nnoremap s :noh<CR>s
+nnoremap <esc> mqn`q<esc>
+inoremap <esc> <esc>mqn`q<esc>l
 
 " ----  common action ------------"
 map   <leader>qq      :action InvalidateCaches<CR>
@@ -20,6 +27,7 @@ map  <leader>f       :action ReformatCode<CR>:w<CR>
 map  <leader>ra      :action Run<CR>
 imap <leader>f  <esc>:action ReformatCode<CR>:w<CR>
 imap <leader>ra <esc>:action Run<CR>
+nnoremap <leader>0 :action TogglePresentationMode<CR>
 
 " ----  move to ------------"
 map   <leader>n            :action GotoNextError<CR>
@@ -33,17 +41,19 @@ map \n :action MethodDown<CR>
 
 
 " ----- move to ------------------
-map    \f     :action GotoDeclaration<CR>
-imap   \f     <esc>:action GotoDeclaration<CR>
+map    \f     mn:action GotoDeclaration<CR>
+imap   \f     <esc>mn:action GotoDeclaration<CR>
 map    \t /def<CR>w
-map <a-n> /def<CR>w
-map <a-j> /def<CR>w
+map <a-n> /def/e+2<CR>
+map <a-j> /def/e+2<CR>
+map \/ :action AceAction<CR>
 
 " ---  find and replace -----------
 map <leader>.c T.ct(
 map \c  T_ct_
-map \x ?if<CR>wvt:
-map <leader>cc /'<cr>lci'
+map \x /'.*'/s+1<CR>
+nnoremap <leader>x /'.*'/s+1<CR>
+nnoremap <leader>c /'.*'/s+1<CR>ci'
 map <leader>rs :action SurroundWith<CR>
 vmap <leader>ss :action SmartSelect<CR>
 vmap <leader>uu :action SmartUnSelect<CR>
@@ -71,6 +81,8 @@ map  <a-;>      ^yiw^Pa = <esc>^veu<esc>
 imap <a-;> <esc>^yiw^Pa = <esc>^veu<esc>
 map  <a-.> iself.
 imap <a-.> self.
+map <leader>re ^ddpkJJct <backspace> else<esc><<
 
 " ---- plugin for ideavim -----------
 set easymotion
+set surround
