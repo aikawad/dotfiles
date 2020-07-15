@@ -49,11 +49,12 @@ map <a-j> /def/e+2<CR>
 map \/ :action AceAction<CR>
 
 " ---  find and replace -----------
-map <leader>.c T.ct(
+map <leader>.b T.vt(
+map <leader>.e $F(hvT_
 map \c  T_ct_
-map \x /'.*'/s+1<CR>
-nnoremap <leader>x /'.*'/s+1<CR>
-nnoremap <leader>c /'.*'/s+1<CR>ci'
+map \x /'.\{-\}'/s+1<CR>
+nnoremap <leader>x /'.\{-\}'/s+1<CR>
+nnoremap <leader>c /'.\{-\}'/s+1<CR>ci'
 map <leader>rs :action SurroundWith<CR>
 vmap <leader>ss :action SmartSelect<CR>
 vmap <leader>uu :action SmartUnSelect<CR>
