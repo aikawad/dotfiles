@@ -1,9 +1,10 @@
 """ Map leader to space ---------------------
 let mapleader="z"
 
+
 """ Plugins  --------------------------------
 set surround
-set multiple-cursors
+"set multiple-cursors
 set commentary
 set argtextobj
 set easymotion
@@ -25,9 +26,13 @@ set vb
 set clipboard+=unnamed
 
 """ Idea specific settings ------------------
+set ideavimsupport+=singleline
 "set ideajoin
 set ideastatusicon=gray
+
 "set idearefactormode=keep
+"set idearefactormode=visual
+set idearefactormode=select
 
 """ Mappings --------------------------------
 "map <leader><leader>f <Plug>(easymotion-f)
@@ -39,9 +44,9 @@ set ideastatusicon=gray
 "map <leader>z <Action>(ToggleDistractionFreeMode)
 
 "map <leader>s <Action>(SelectInProjectView)
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
+"map <leader>a <Action>(Annotate)
+"map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+"map <S-Space> <Action>(GotoNextError)
 
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
@@ -64,6 +69,8 @@ nnoremap c :noh<CR>c
 " ----  common action ------------"
 map   <leader>qq      :action InvalidateCaches<CR>
 imap  <leader>qq <esc>:action InvalidateCaches<CR>
+map  <leader><Esc>      :action Run<CR>
+"imap <Esc><Esc> <esc>:action Run<CR>
 map  <leader>f       :action ReformatCode<CR>:w<CR>
 imap <leader>f  <esc>:action ReformatCode<CR>:w<CR>
 map  <leader>ra      :action Run<CR>
@@ -75,13 +82,15 @@ nnoremap <leader>0 :action TogglePresentationMode<CR>
 " ----  move to ------------"
 map   <leader>n            :action GotoNextError<CR>
 imap  <leader>n       <esc>:action GotoNextError<CR>
+map <S-Space>               <Action>(GotoNextError)
 map  <leader>rt      :action SearchEverywhere<CR>
 imap <leader>rt <esc>:action SearchEverywhere<CR>
 map  <leader>ro      :action Move<CR>
 imap <leader>ro <esc>:action Move<CR>
-map \e :action MethodUp<CR>
 map \n :action MethodDown<CR>
-
+map \e :action MethodUp<CR>
+map <A-N> <action>(MethodDown)
+map <A-E> <action>(MethodUp)
 
 " ----- move to ------------------
 map    \f     mn:action GotoDeclaration<CR>
@@ -90,7 +99,7 @@ map    \t /def<CR>w
 map <a-n> /def/e+2<CR>
 map <a-j> /def/e+2<CR>
 map \\ <action>(AceWordAction)
-map \_ /_/s+1
+map \_ /_/s+1<CR>
 
 " ---  find and replace -----------
 map <leader>.b T.vt(
@@ -111,6 +120,8 @@ map <leader>rs :action SurroundWith<CR>
 
 " ---- clone pattern ------------
 map \d vasy}p<leader>f?def<CR>f_l
+map yu       T_yt_
+map y<space> yiwe
 
 " ----  Refactor  ------------
 map <leader>rr  :action RenameElement<CR>
@@ -132,7 +143,8 @@ map  <a-;>      ^yiw^Pa = <esc>^veu<esc>
 imap <a-;> <esc>^yiw^Pa = <esc>^veu<esc>
 map  <a-.> iself.
 imap <a-.> self.
-map <leader>re ^ddpkJJct <backspace> else<esc><<
+"map <leader>re ^ddpkJJct <backspace> else<esc><<
+map <Leader>re jddkPJJ<BACKSPACE>ce else<ESC>
 
 " ---- plugin for ideavim -----------
 "set easymotion
