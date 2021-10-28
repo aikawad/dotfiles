@@ -18,12 +18,12 @@ let g:argtextobj_pairs="[:],(:),<:>"
 set showmode
 set so=5
 set ignorecase
-"set hlsearch
+set hlsearch
 set incsearch
 set nu
 set rnu
 set vb
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 """ Idea specific settings ------------------
 set ideavimsupport+=singleline
@@ -69,14 +69,13 @@ nnoremap c :noh<CR>c
 " ----  common action ------------"
 map   <leader>qq      :action InvalidateCaches<CR>
 imap  <leader>qq <esc>:action InvalidateCaches<CR>
-map  <leader><Esc>      :action Run<CR>
-"imap <Esc><Esc> <esc>:action Run<CR>
+map  <leader><Esc>      :action ReformatCode<CR>:action Run<CR>
 map  <leader>f       :action ReformatCode<CR>:w<CR>
 imap <leader>f  <esc>:action ReformatCode<CR>:w<CR>
-map  <leader>ra      :action Run<CR>
-imap <leader>ra <esc>:action Run<CR>
-map  <leader>aa      :action Run<CR>
-imap <leader>aa <esc>:action Run<CR>
+map  <leader>ra      :action ReformatCode<CR>:action Run<CR>
+imap <leader>ra <esc>:action ReformatCode<CR>:action Run<CR>
+map  <leader>aa      :action ReformatCode<CR><Bar>:action Run<CR>
+imap <leader>aa <esc>:action ReformatCode<CR>:action Run<CR>
 nnoremap <leader>0 :action TogglePresentationMode<CR>
 
 " ----  move to ------------"
@@ -96,8 +95,8 @@ map <A-E> <action>(MethodUp)
 map    \f     mn:action GotoDeclaration<CR>
 imap   \f     <esc>mn:action GotoDeclaration<CR>
 map    \t /def<CR>w
-map <a-n> /def/e+2<CR>
-map <a-j> /def/e+2<CR>
+"map <a-n> /def/e+2<CR>
+"map <a-j> /def/e+2<CR>
 map \\ <action>(AceWordAction)
 map \_ /_/s+1<CR>
 
